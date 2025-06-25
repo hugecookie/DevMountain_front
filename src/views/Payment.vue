@@ -32,7 +32,7 @@ const onClick = async () => {
   }
 
   try {
-    const res = await fetch('http://app:8080/api/orders', {
+    const res = await fetch('http://13.209.155.21:8080/api/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

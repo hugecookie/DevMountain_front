@@ -73,7 +73,7 @@ const formatDate = (isoDate) => {
 
 onMounted(async () => {
   try {
-    const res = await axios.get('http://app:8080/users/me', { withCredentials: true })
+    const res = await axios.get('http://13.209.155.21:8080/users/me', { withCredentials: true })
     user.value = res.data
   } catch (err) {
     console.error('유저 정보 로딩 실패', err)

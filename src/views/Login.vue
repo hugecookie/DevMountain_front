@@ -60,7 +60,7 @@ const login = async () => {
 
   try {
     const res = await axios.post(
-        'http://app:8080/users/login',
+        'http://13.209.155.21:8080/users/login',
         {
           email: email.value,
           password: password.value
@@ -96,7 +96,7 @@ const login = async () => {
 
 // 소셜 로그인 함수 추가
 const socialLogin = (provider) => {
-  window.location.href = `http://app:8080/oauth2/authorization/${provider}`;
+  window.location.href = `http://13.209.155.21:8080/oauth2/authorization/${provider}`;
 };
 </script>
 

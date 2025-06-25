@@ -43,7 +43,7 @@ const messages = ref([{sender: '시스템', text: '채팅방에 입장했습니�
 const newMessage = ref('')
 
 const connectWebSocket = () => {
-  socket.value = new WebSocket(`ws://app:8080/ws/chat?roomId=${roomId}`)
+  socket.value = new WebSocket(`ws://13.209.155.21:8080/ws/chat?roomId=${roomId}`)
 
   socket.value.onopen = () => {
     console.log('WebSocket 연결 성공')

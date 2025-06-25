@@ -76,7 +76,7 @@ const selectRoom = (room) => {
 const fetchChatRooms = async () => {
   try {
     console.log('채팅방 목록 조회 시작')
-    const response = await axios.get('http://app:8080/chatrooms', {
+    const response = await axios.get('http://13.209.155.21:8080/chatrooms', {
       withCredentials: true
     })
     console.log('채팅방 목록 응답:', response.data)
@@ -93,7 +93,7 @@ const createRoom = async () => {
   const defaultRoomName = ''
   try {
     const response = await axios.post(
-        'http://app:8080/chatrooms',
+        'http://13.209.155.21:8080/chatrooms',
         {
           chatroomName: defaultRoomName
         },
@@ -129,7 +129,7 @@ const deleteRoom = async () => {
 
   try {
     const response = await axios.delete(
-        `http://app:8080/chatrooms/${roomToDelete.value.chatroomId}`,
+        `http://13.209.155.21:8080/chatrooms/${roomToDelete.value.chatroomId}`,
         { withCredentials: true }
     )
 

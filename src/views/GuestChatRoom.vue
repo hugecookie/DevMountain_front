@@ -69,7 +69,7 @@ const streamingAiMessage = ref(null)
 const connectWebSocket = () => {
   if (!props.roomId) return
 
-  socket.value = new WebSocket(`ws://app:8080/ws/chat?roomId=${props.roomId}`)
+  socket.value = new WebSocket(`ws://13.209.155.21:8080/ws/chat?roomId=${props.roomId}`)
 
   socket.value.onopen = () => console.log('WebSocket 연결 성공 (비회원)')
 
