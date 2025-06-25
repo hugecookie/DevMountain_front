@@ -76,7 +76,7 @@ export default {
             .filter(c => c.length > 0)
       };
 
-      axios.post("http://localhost:8080/users/signup", saveData, {
+      axios.post("http://app:8080/users/signup", saveData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -93,7 +93,7 @@ export default {
       });
     },
     socialLogin(provider) {
-      const baseUrl = "http://localhost:8080/oauth2/authorization";
+      const baseUrl = "http://app:8080/oauth2/authorization";
       window.location.href = `${baseUrl}/${provider}`;
     }
   }

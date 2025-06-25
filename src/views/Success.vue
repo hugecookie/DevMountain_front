@@ -23,7 +23,7 @@ onMounted(async () => {
   }
 
   try {
-    const res = await axios.post('http://localhost:8080/api/orders/confirm-payment', {
+    const res = await axios.post('http://app:8080/api/orders/confirm-payment', {
         paymentKey,
         orderId,
         amount: parseInt(amount)

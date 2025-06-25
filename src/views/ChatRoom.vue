@@ -96,7 +96,7 @@ const fetchMessages = async () => {
   if (!props.roomId || props.isGuest) return // 방 ID 없거나 비회원이면 무시
   try {
     const response = await axios.get(
-        `http://localhost:8080/chatrooms/${props.roomId}/messages`,
+        `http://app:8080/chatrooms/${props.roomId}/messages`,
         { withCredentials: true }
     )
 
@@ -174,7 +174,7 @@ const connectWebSocket = () => {
 
   console.log('WebSocket 연결 시도:', props.roomId)
   const token = localStorage.getItem('token')
-  const wsUrl = `ws://localhost:8080/ws/chat?roomId=${props.roomId}${token ? `&token=${token}` : ''}`
+  const wsUrl = `ws://app:8080/ws/chat?roomId=${props.roomId}${token ? `&token=${token}` : ''}`
   ws.value = new WebSocket(wsUrl)
   ws.value.onopen = () => {
     console.log('WebSocket 연결 성공')
@@ -247,7 +247,7 @@ const sendMessage = async () => {
   if (!newMessage.value.trim() || !props.roomId) return
   try {
     const response = await axios.post(
-        `http://localhost:8080/chatrooms/${props.roomId}/messages`,
+        `http://app:8080/chatrooms/${props.roomId}/messages`,
         { message: newMessage.value.trim() },
         { withCredentials: true }
     )

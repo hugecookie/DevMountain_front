@@ -56,7 +56,7 @@ onMounted(async () => {
 
   try {
     // 회원 정보 조회(쿠키/세션 기반)
-    const res = await axios.get('http://localhost:8080/users/me', {
+    const res = await axios.get('http://app:8080/users/me', {
       withCredentials: true
     })
     console.log('회원 정보 조회 성공:', res.data)
@@ -70,7 +70,7 @@ onMounted(async () => {
     isGuest.value = false
 
     // 회원 채팅방 목록 조회
-    const roomsResponse = await axios.get('http://localhost:8080/chatrooms', {
+    const roomsResponse = await axios.get('http://app:8080/chatrooms', {
       withCredentials: true
     })
     console.log('채팅방 목록 조회 성공:', roomsResponse.data)
@@ -96,7 +96,7 @@ onMounted(async () => {
 
 // 로그아웃 처리(세션 종료 및 새로고침)
 const handleLogout = async () => {
-  await axios.post('http://localhost:8080/logout', null, {
+  await axios.post('http://app:8080/logout', null, {
     withCredentials: true
   })
   localStorage.removeItem('username')
